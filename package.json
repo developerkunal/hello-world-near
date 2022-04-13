@@ -1,8 +1,11 @@
 {
-  "name": "hello-world",
+  "name": "hello-world-near",
   "version": "1.0.0",
+  "homepage":"https://developerkunal.github.io/hello-world-near",
   "description": "Hello World Near Hackathon",
   "scripts": {
+    "predeploy": "npm run build:web",
+    "deploy":"gh-pages -d dist",
     "build": "cargo build --target wasm32-unknown-unknown --release",
     "build:web": "parcel build ./frontend/index.html --public-url ./ --no-minify",
     "start": "npm run build && npm run build:web &&   npx parcel frontend/index.html",

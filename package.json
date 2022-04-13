@@ -1,7 +1,7 @@
 {
   "name": "hello-world-near",
   "version": "1.0.0",
-  "homepage":"https://developerkunal.github.io/hello-world-near",
+  "homepage":"https://developerkunal.github.io/hello-world-near/",
   "description": "Hello World Near Hackathon",
   "scripts": {
     "predeploy": "npm run build:web",
@@ -9,7 +9,8 @@
     "build": "cargo build --target wasm32-unknown-unknown --release",
     "build:web": "parcel build ./frontend/index.html --public-url ./ --no-minify",
     "start": "npm run build && npm run build:web &&   npx parcel frontend/index.html",
-    "postbuild": "cp target/wasm32-unknown-unknown/release/hello_world.wasm ./res/"
+    "postbuild": "cp target/wasm32-unknown-unknown/release/hello_world.wasm ./res/",
+    "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
   },
   "keywords": [
     "near-protocol",
